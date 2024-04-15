@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: inscritos
+    description: "nome e idade dos inscritos"
+    columns:
+      - name: name
+        description: "nome do inscrito"
+        tests:
+          - unique
+
+  - name: stage_inscritos
+    description: "dados dos inscritos transformados"
+    columns:
+      - name: maiority
+        description: "indicador de maioridade (true/false)"
+        tests:
+          - not_null
+
+  - name: analise_inscritos
+    description: "dados dos inscritos por maior idade agregados"
+    columns:
+      - name: maiority
+        description: "indicador de maioridade (true/false)"
+        tests:
+          - accepted_values:
+              values: [true, false]
+              quote: false
