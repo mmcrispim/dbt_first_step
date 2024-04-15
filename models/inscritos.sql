@@ -1,0 +1,1 @@
+SELECT * FROM `corded-nature-339819.schema.inscritos` order by name
